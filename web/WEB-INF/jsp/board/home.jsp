@@ -11,6 +11,6 @@
     <title>Welcome!</title>
 </head>
 <body>
- <a href="/board/home">here</a>
+현승이 바보
 </body>
 </html>
