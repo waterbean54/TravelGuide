@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <div th:replace="layout/title :: title"></div>
     <title>게시판</title>
 </head>
 <body>
+    <form id="insertBardForm" name="insertBoardForm">
+        <input type="text" name="dc_content"/>
+        <input type="text" name="dc_subject"/>
+        <input type="text" name="id_email"/>
+        <button id="insertBtn" onclick="fnInsertBoard()">button</button>
+    </form>
 
-게시판게시판게시판
-
-
+    <table id="exampleTable" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Seq</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </body>
 </html>
+
+<script>
+
+    $( document ).ready(function() {
+        fnGetBoardList();
+    });
+
+    function fnGetBoardList() {
+        $.ajax({
+            type: "GET",
+            url: "/getBoardList",
+            dataType: "JSON",
+            success: function (data, textStatus, jqXHR) {
+                $.each(data.content, function (index, arrjson) {
+                    console.log(data);
+                });
+            }
+        });
+    }
+
+</script>

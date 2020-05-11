@@ -12,7 +12,6 @@ import java.util.Collection;
 @Service
 public class AccountService implements UserDetailsService {
 
-
     public Account createAccount(Account account) {
 
         return null;
@@ -20,9 +19,7 @@ public class AccountService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
         //UserDetails userDetails = new UserDetails
-
         return null;
     }
 }
